@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>test</title>
+ 
+</head>
+<body>
+  <section>
+
+    <ul>
+      @each(customer in customers)
+      @if(customer.first_name == 'Anna')
+        <h1>This is Anna</h1>
+      @endif
+    <li>{{customer.first_name}} {{customer.last_name}}</li>
+        <ol>
+          @each(order in customer.orders)
+            <li>{{order.id}} - {{shortDate(order.order_date)}}</li>
+          @endeach
+        </ol>
+      @endeach
+    </ul>
+  </section>
+</body>
+</html>
